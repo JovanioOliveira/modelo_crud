@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Deseja adicionar mais um item?</h1>
+    <a href="{{ url_for('create') }}">Sim</a>
+    <a href="{{ url_for('index') }}">Não</a>
+{% endblock %}

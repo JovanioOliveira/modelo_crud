@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Task Tracker - Rastreador de Tarefas</h1>
+    <a href="{{ url_for('export') }}">Exportar Dados</a>
+    <a href="{{ url_for('export_summary') }}">Exportar Resumo dos Dados</a>
+    <a href="{{ url_for('home') }}">Inicio</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Tipo</th>
+                <th>Chave</th>
+                <th>UF</th>
+                <th>GRA</th>
+                <th>LOC</th>
+                <th>Estação</th>
+                <th>ARD</th>
+                <th>Equipe</th>
+                <th>DC</th>
+                <th>Status</th>
+                <th>CA20</th>
+                <th>CA50</th>
+                <th>CA100</th>
+                <th>CA200</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.date }}</td>
+                    <td>{{ task.tipo }}</td>
+                    <td>{{ task.chave }}</td>
+                    <td>{{ task.uf }}</td>
+                    <td>{{ task.gra }}</td>
+                    <td>{{ task.loc }}</td>
+                    <td>{{ task.estacao }}</td>
+                    <td>{{ task.ard }}</td>
+                    <td>{{ task.team }}</td>
+                    <td>{{ task.dc }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.ca20 }}</td>
+                    <td>{{ task.ca50 }}</td>
+                    <td>{{ task.ca100 }}</td>
+                    <td>{{ task.ca200 }}</td>
+                    <td>{{ task.total }}</td>
+                    <td>
+                        <a href="{{ url_for('update', id=task.id) }}">Editar</a>
+                        <a href="{{ url_for('delete', id=task.id) }}">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('create') }}">Criar Novo Item</a>
+{% endblock %}
+

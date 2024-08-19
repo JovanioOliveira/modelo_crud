@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Update Task</h1>
+    <form action="/update/{{ task.id }}" method="POST">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="{{ task.date }}" required><br>
+
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" value="{{ task.tipo }}" required><br>
+
+        <label for="uf">UF:</label>
+        <input type="text" id="uf" name="uf" value="{{ task.uf }}" required><br>
+
+        <label for="gra">GRA:</label>
+        <input type="text" id="gra" name="gra" value="{{ task.gra }}" required><br>
+
+        <label for="loc">LOC:</label>
+        <input type="text" id="loc" name="loc" value="{{ task.loc }}" required><br>
+
+        <label for="estacao">Estação:</label>
+        <input type="text" id="estacao" name="estacao" value="{{ task.estacao }}" required><br>
+
+        <label for="ard">ARD:</label>
+        <input type="text" id="ard" name="ard" value="{{ task.ard }}" required><br>
+
+        <label for="team">Equipe:</label>
+        <input type="text" id="team" name="team" value="{{ task.team }}" required><br>
+
+        <label for="dc">DC:</label>
+        <input type="text" id="dc" name="dc" value="{{ task.dc }}" required><br>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" value="{{ task.status }}" required><br>
+
+        <label for="ca20">CA20:</label>
+        <input type="number" id="ca20" name="ca20" value="{{ task.ca20 }}" required><br>
+
+        <label for="ca50">CA50:</label>
+        <input type="number" id="ca50" name="ca50" value="{{ task.ca50 }}" required><br>
+
+        <label for="ca100">CA100:</label>
+        <input type="number" id="ca100" name="ca100" value="{{ task.ca100 }}" required><br>
+
+        <label for="ca200">CA200:</label>
+        <input type="number" id="ca200" name="ca200" value="{{ task.ca200 }}" required><br>
+
+        <button type="submit">Update Task</button>
+    </form>
+{% endblock %}
+

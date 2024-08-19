@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Create Task</h1>
+    <form action="/create" method="POST">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" required placeholder="XX/XX/XXXX"><br>
+
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" required placeholder="LATERAL"><br>
+
+        <label for="uf">UF:</label>
+        <input type="text" id="uf" name="uf" required placeholder="PI"><br>
+
+        <label for="gra">GRA:</label>
+        <input type="text" id="gra" name="gra" required placeholder="PCZ" ><br>
+
+        <label for="loc">LOC:</label>
+        <input type="text" id="loc" name="loc" required placeholder="PCZ ou SPI"><br>
+
+        <label for="estacao">Estação:</label>
+        <input type="text" id="estacao" name="estacao" required placeholder="PCZ ou SPI" ><br>
+
+        <label for="ard">ARD:</label>
+        <input type="text" id="ard" name="ard" required placeholder="CA ou SD" ><br>
+
+        <label for="team">Equipe:</label>
+        <input type="text" id="team" name="team" required placeholder="Nome + Sobrenome"><br>
+
+        <label for="dc">DC:</label>
+        <input type="text" id="dc" name="dc" required placeholder="0000"><br>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" required placeholder="Em andamento ou Concluído" ><br>
+
+        <label for="ca20">CA20:</label>
+        <input type="number" id="ca20" name="ca20" required placeholder="Insira um valor numérico"><br>
+
+        <label for="ca50">CA50:</label>
+        <input type="number" id="ca50" name="ca50" required placeholder="Insira um valor numérico" ><br>
+
+        <label for="ca100">CA100:</label>
+        <input type="number" id="ca100" name="ca100" required placeholder="Insira um valor numérico" ><br>
+
+        <label for="ca200">CA200:</label>
+        <input type="number" id="ca200" name="ca200" required placeholder="Insira um valor numérico" ><br>
+
+        <button type="submit">Create Task</button>
+    </form>
+{% endblock %}
+
