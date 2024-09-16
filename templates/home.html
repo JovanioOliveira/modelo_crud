@@ -1,12 +1,11 @@
+<!-- home.html -->
 {% extends "layout.html" %}
 
 {% block content %}
 <h1>Bem-vindo ao Task Tracker</h1>
-<a href="{{ url_for('index') }}" class="button">Cadastrar Tafefas</a>
-
-<!-- <a href="{{ url_for('index') }}" class="button">Resumo de cadastros</a>
-
-<a href="{{ url_for('index') }}" class="button">Cadastrar Tafefas</a> -->
+<a href="{{ url_for('tasks.index') }}" class="button">Tarefas Cadastradas</a>
+<a href="{{ url_for('tasks.search_dc') }}" class="button">Pesquisar - DC</a>
+<a href="{{ url_for('tasks.create') }}" class="button">Cadastrar Nova Tarefa</a>
 
 {% endblock %}
 

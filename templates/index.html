@@ -1,14 +1,16 @@
+<!-- index.html -->
 {% extends "layout.html" %}
 {% block content %}
     <h1>Task Tracker - Rastreador de Tarefas</h1>
-    <a href="{{ url_for('export') }}">Exportar Dados</a>
-    <a href="{{ url_for('export_summary') }}">Exportar Resumo dos Dados</a>
-    <a href="{{ url_for('home') }}">Inicio</a>
-
+    <a href="{{ url_for('tasks.export') }}" class="button">Exportar Dados</a>
+    <a href="{{ url_for('tasks.export_summary') }}" class="button">Exportar Resumo</a>    
+    <a href="{{ url_for('tasks.save_summary') }}" class="button">Salvar</a> <!-- Novo botão Salvar -->
+    <a href="{{ url_for('home') }}" class="button">Início</a>
+    
     <table>
         <thead>
             <tr>
-                <th>Date</th>
+                <th>Data</th>
                 <th>Tipo</th>
                 <th>Chave</th>
                 <th>UF</th>
@@ -24,7 +26,7 @@
                 <th>CA100</th>
                 <th>CA200</th>
                 <th>Total</th>
-                <th>Actions</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -47,13 +49,13 @@
                     <td>{{ task.ca200 }}</td>
                     <td>{{ task.total }}</td>
                     <td>
-                        <a href="{{ url_for('update', id=task.id) }}">Editar</a>
-                        <a href="{{ url_for('delete', id=task.id) }}">Deletar</a>
+                        <a href="{{ url_for('tasks.update', id=task.id) }}">Editar</a>
+                        <a href="{{ url_for('tasks.delete', id=task.id) }}">Deletar</a>
                     </td>
                 </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('create') }}">Criar Novo Item</a>
+    
 {% endblock %}
 

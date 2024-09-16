@@ -1,0 +1,72 @@
+<!-- pesquisar.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Pesquisar por DC</h1>
+    <a href="{{ url_for('home') }}" class="button">Início</a>
+    
+    <form action="{{ url_for('tasks.search_dc') }}" method="POST">
+        <label for="dc">Número da DC:</label>
+        <input type="text" id="dc" name="dc" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if results %}
+        <h2>Resultados da Pesquisa</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>DC</th>
+                    <th>Equipe</th>
+                    <th>Status</th>
+                    <th>CA20</th>
+                    <th>CA50</th>
+                    <th>CA100</th>
+                    <th>CA200</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in results %}
+                    <tr>
+                        <td>{{ task.date }}</td>
+                        <td>{{ task.dc }}</td>
+                        <td>{{ task.team }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.ca20 }}</td>
+                        <td>{{ task.ca50 }}</td>
+                        <td>{{ task.ca100 }}</td>
+                        <td>{{ task.ca200 }}</td>
+                        <td>{{ task.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    {% if summary %}
+        <h2>Resumo da DC {{ summary.dc }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Total CA20</th>
+                    <th>Total CA50</th>
+                    <th>Total CA100</th>
+                    <th>Total CA200</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ summary.total_ca20 }}</td>
+                    <td>{{ summary.total_ca50 }}</td>
+                    <td>{{ summary.total_ca100 }}</td>
+                    <td>{{ summary.total_ca200 }}</td>
+                    <td>{{ summary.total_sum }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+

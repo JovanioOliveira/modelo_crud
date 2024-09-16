@@ -1,6 +1,8 @@
+<!-- add_more.html -->
 {% extends "layout.html" %}
 {% block content %}
     <h1>Deseja adicionar mais um item?</h1>
-    <a href="{{ url_for('create') }}">Sim</a>
-    <a href="{{ url_for('index') }}">Não</a>
+    <a href="{{ url_for('tasks.create') }}" class="button">Sim</a>
+    <a href="{{ url_for('home') }}" class="button">Não</a>
 {% endblock %}
+
